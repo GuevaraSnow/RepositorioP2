@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.torneodeportivo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bibliotecario extends Empleado {
+public class Bibliotecario extends Empleado implements GestionInventario{
 
     private List<Libro> libros = new ArrayList();
     private List<Prestamo> prestamos = new ArrayList();
@@ -28,5 +28,10 @@ public class Bibliotecario extends Empleado {
 
     public void setPrestamos(List<Prestamo> prestamos) {
         this.prestamos = prestamos;
+    }
+
+    @Override
+    public void gestionarItem() {
+
     }
 }
