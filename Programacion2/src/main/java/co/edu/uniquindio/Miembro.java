@@ -37,10 +37,11 @@ public class Miembro {
         this.nombre = nombre;
     }
 
-    public  void añadirPrestamo (Prestamo prestamo){
+    public void añadirPrestamo(Prestamo prestamo) {
         prestamosActivos.add(prestamo);
     }
-    public  void eliminarPrestamo (Prestamo prestamo){
+
+    public void eliminarPrestamo(Prestamo prestamo) {
         prestamosActivos.remove(prestamo);
     }
 }

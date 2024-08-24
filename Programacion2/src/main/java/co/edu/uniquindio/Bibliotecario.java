@@ -3,12 +3,13 @@ package co.edu.uniquindio.poo.torneodeportivo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bibliotecario extends Empleado{
+public class Bibliotecario extends Empleado {
 
     private List<Libro> libros = new ArrayList();
     private List<Prestamo> prestamos = new ArrayList();
 
-    public Bibliotecario(List<Libro> libros, List<Prestamo> prestamos) {
+    public Bibliotecario(String nombre, double idEmpleado, List<Libro> libros, List<Prestamo> prestamos) {
+        super(nombre, idEmpleado);
         this.libros = libros;
         this.prestamos = prestamos;
     }
