@@ -29,4 +29,8 @@ public class Bibliotecario extends Empleado {
     public void setPrestamos(List<Prestamo> prestamos) {
         this.prestamos = prestamos;
     }
+
+    public  void  gestionarPrestamos(List<Prestamo> prestamos){
+
+    }
 }
