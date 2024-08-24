@@ -1,11 +1,12 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Miembro {
     private String nombre;
     private String idMiembro;
-    private List<Prestamo> prestamosActivos;
+    private List<Prestamo> prestamosActivos = new ArrayList<>();
 
     public Miembro(String nombre, String idMiembro, List<Prestamo> prestamosActivos) {
         this.idMiembro = idMiembro;
