@@ -1,9 +1,11 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
+import java.util.List;
+
 public class Miembro {
     private String nombre;
     private String idMiembro;
-    private List <Prestamo> prestamosActivos;
+    private List<Prestamo> prestamosActivos;
 
     public Miembro(String nombre, String idMiembro, List<Prestamo> prestamosActivos) {
         this.idMiembro = idMiembro;
@@ -36,9 +38,9 @@ public class Miembro {
     }
 
     public  void añadirPrestamo (Prestamo prestamo){
-        prestamosActivos.add(prestamo)
+        prestamosActivos.add(prestamo);
     }
     public  void eliminarPrestamo (Prestamo prestamo){
-        prestamosActivos.remove(prestamo)
+        prestamosActivos.remove(prestamo);
     }
 }
