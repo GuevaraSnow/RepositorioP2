@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
-public class Libro {
+public class Libro implements GestionInventario{
     private String titulo;
     private String autor;
     private String isbn;
@@ -44,4 +44,9 @@ public class Libro {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+
+  @Override
+    public  void gestionarItem(){
+        System.out.println("Gestionando el libro"+ titulo);
+  }
 }
