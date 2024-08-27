@@ -1,16 +1,20 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
-public class Libro implements GestionInventario{
+public class Libro implements GestionInventario {
     private String titulo;
     private String autor;
     private String isbn;
-    private boolean disponible;
+    private boolean estado;
 
-    public Libro(String autor, String isbn, boolean disponible, String titulo) {
+    public Libro(String autor, String isbn, boolean estado, String titulo) {
         this.autor = autor;
         this.isbn = isbn;
-        this.disponible = true;
+        this.estado = estado;
         this.titulo = titulo;
+    }
+
+    public Libro() {
+
     }
 
     public String getIsbn() {
@@ -37,16 +41,26 @@ public class Libro implements GestionInventario{
         this.titulo = titulo;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public boolean isEstado() {
+        return estado;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
-  @Override
-    public  void gestionarItem(){
-        System.out.println("Gestionando el libro"+ titulo);
-  }
+    @Override
+    public void gestionarItem() {
+        System.out.println("Gestionando libro");
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", estado=" + estado +
+                '}';
+    }
 }
