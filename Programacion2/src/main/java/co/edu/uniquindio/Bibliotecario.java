@@ -3,15 +3,17 @@ package co.edu.uniquindio.poo.torneodeportivo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bibliotecario extends Empleado {
+public class Bibliotecario extends Empleado implements GestionInventario {
 
+    private GestionInventario g;
     private List<Libro> libros = new ArrayList();
     private List<Prestamo> prestamos = new ArrayList();
 
-    public Bibliotecario(String nombre, double idEmpleado, List<Libro> libros, List<Prestamo> prestamos) {
+    public Bibliotecario(String nombre, double idEmpleado, List<Libro> libros, List<Prestamo> prestamos, GestionInventario g) {
         super(nombre, idEmpleado);
         this.libros = libros;
         this.prestamos = prestamos;
+        this.g = g;
     }
 
     public List<Libro> getLibros() {
@@ -30,7 +32,12 @@ public class Bibliotecario extends Empleado {
         this.prestamos = prestamos;
     }
 
-    public  void  gestionarPrestamos(List<Prestamo> prestamos){
+    public void gestionarPrestamos(List<Prestamo> prestamos) {
 
+    }
+
+    @Override
+    public void gestionarItem() {
+        System.out.println("Gestionando " + g);
     }
 }
