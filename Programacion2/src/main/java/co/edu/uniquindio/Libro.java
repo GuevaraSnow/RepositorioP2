@@ -4,12 +4,12 @@ public class Libro implements GestionInventario {
     private String titulo;
     private String autor;
     private String isbn;
-    private boolean estado;
+    private boolean disponibilidad;
 
     public Libro(String autor, String isbn, boolean estado, String titulo) {
         this.autor = autor;
         this.isbn = isbn;
-        this.estado = estado;
+        this.disponibilidad = estado;
         this.titulo = titulo;
     }
 
@@ -41,12 +41,12 @@ public class Libro implements GestionInventario {
         this.titulo = titulo;
     }
 
-    public boolean isEstado() {
-        return estado;
+    public boolean isDisponibilidad() {
+        return disponibilidad;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setDisponibilidad(boolean disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class Libro implements GestionInventario {
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", estado=" + estado +
+                ", disponible=" + disponibilidad +
                 '}';
     }
 }
