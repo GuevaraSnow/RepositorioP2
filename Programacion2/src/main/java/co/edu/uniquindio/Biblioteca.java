@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.torneodeportivo;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Biblioteca {
@@ -41,14 +42,14 @@ public class Biblioteca {
 
     //Metodo para buscar Libros por Autor
 
-    public  List<Libro> buscarLibrosPorAutor(String autor{
-        List<Libro> librosPorAutor= new Arraylist <> ();
+    public  List<Libro> buscarLibrosPorAutor(String autor){
+        List<Libro> librosPorAutor= new LinkedList<>();
         for (Libro libro:libros){
-            if(libro.getAutor().equalsIgnoreCase(Autor)){
-                librosPorAutos.add(libro);
+            if(libro.getAutor().equalsIgnoreCase(autor)){
+                librosPorAutor.add(libro);
             }
         }
-        return librosPorAutos;
+        return librosPorAutor;
     }
 }
 
