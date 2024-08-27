@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bibliotecario extends Empleado implements GestionInventario {
+
     private GestionInventario g;
-
-
     private List<Libro> libros = new ArrayList();
     private List<Prestamo> prestamos = new ArrayList();
 
@@ -33,12 +32,12 @@ public class Bibliotecario extends Empleado implements GestionInventario {
         this.prestamos = prestamos;
     }
 
-    public  void  gestionarPrestamos(List<Prestamo> prestamos){
+    public void gestionarPrestamos(List<Prestamo> prestamos) {
 
     }
 
     @Override
     public void gestionarItem() {
-        System.out.println("Gestionando " +g);
+        System.out.println("Gestionando " + g);
     }
 }
