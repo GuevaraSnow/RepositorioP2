@@ -6,10 +6,10 @@ import java.util.Collection;
 public class SistemaGestionBiblioteca {
     private Bibliotecario bibliotecario;
 
-    private Collection<Miembro> miembrosBiblioteca = new ArrayList();
+    private Collection<Cliente> miembrosBiblioteca = new ArrayList();
     private Collection<Prestamo> prestamoBiblioteca = new ArrayList();
 
-    public SistemaGestionBiblioteca(Bibliotecario bibliotecario,  Collection<Miembro> miembrosBiblioteca, Collection<Prestamo> prestamoBiblioteca) {
+    public SistemaGestionBiblioteca(Bibliotecario bibliotecario, Collection<Cliente> miembrosBiblioteca, Collection<Prestamo> prestamoBiblioteca) {
         this.bibliotecario = bibliotecario;
         this.miembrosBiblioteca = miembrosBiblioteca;
         this.prestamoBiblioteca = prestamoBiblioteca;
@@ -23,11 +23,11 @@ public class SistemaGestionBiblioteca {
         this.bibliotecario = bibliotecario;
     }
 
-    public Collection<Miembro> getMiembrosBiblioteca() {
+    public Collection<Cliente> getMiembrosBiblioteca() {
         return miembrosBiblioteca;
     }
 
-    public void setMiembrosBiblioteca(Collection<Miembro> miembrosBiblioteca) {
+    public void setMiembrosBiblioteca(Collection<Cliente> miembrosBiblioteca) {
         this.miembrosBiblioteca = miembrosBiblioteca;
     }
 

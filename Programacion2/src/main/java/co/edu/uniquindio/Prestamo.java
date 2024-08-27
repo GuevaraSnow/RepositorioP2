@@ -5,11 +5,11 @@ import java.time.LocalTime;
 
 public class Prestamo {
     private LocalDate fechaPrestamo;
-    private LocalTime fechaDevolucion;
+    private LocalDate fechaDevolucion;
     private Libro libro;
-    private Miembro miembro;
+    private Cliente miembro;
 
-    public Prestamo(LocalDate fechaPrestamo, LocalTime fechaDevolucion) {
+    public Prestamo(LocalDate fechaPrestamo, LocalDate fechaDevolucion) {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
     }
@@ -22,11 +22,11 @@ public class Prestamo {
         this.fechaPrestamo = fechaPrestamo;
     }
 
-    public LocalTime getFechaDevolucion() {
+    public LocalDate getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(LocalTime fechaDevolucion) {
+    public void setFechaDevolucion(LocalDate fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
@@ -38,11 +38,11 @@ public class Prestamo {
         this.libro = libro;
     }
 
-    public Miembro getMiembro() {
+    public Cliente getMiembro() {
         return miembro;
     }
 
-    public void setMiembro(Miembro miembro) {
+    public void setMiembro(Cliente miembro) {
         this.miembro = miembro;
     }
 }
