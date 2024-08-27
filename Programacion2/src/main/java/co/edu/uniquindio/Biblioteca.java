@@ -42,9 +42,9 @@ public class Biblioteca {
     //Metodo para buscar Libros por Autor
 
     public  List<Libro> buscarLibrosPorAutor(String autor{
-        List<Libro> librosPorAutos= new Arraylist <> ();
+        List<Libro> librosPorAutor= new Arraylist <> ();
         for (Libro libro:libros){
-            if(libro.getAutor().equalsIgnoereCase(Autor)){
+            if(libro.getAutor().equalsIgnoreCase(Autor)){
                 librosPorAutos.add(libro);
             }
         }
