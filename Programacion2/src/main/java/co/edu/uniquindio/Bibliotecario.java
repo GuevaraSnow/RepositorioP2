@@ -37,7 +37,8 @@ public class Bibliotecario extends Empleado implements GestionInventario {
     }
 
     @Override
-    public void gestionarItem() {
+    public Object gestionarItem() {
         System.out.println("Gestionando " + g);
+        return null;
     }
 }
