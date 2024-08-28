@@ -54,4 +54,9 @@ public class Cliente {
                 ", prestamosActivos=" + prestamosActivos +
                 '}';
     }
+    public double calcularMultas() {
+        return prestamosActivos.stream()
+                .mapToDouble(Prestamo::calcularMulta)
+                .sum();
+    }
 }

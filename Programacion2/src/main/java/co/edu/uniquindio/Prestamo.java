@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.torneodeportivo;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class Prestamo {
     private LocalDate fechaPrestamo;
@@ -44,5 +45,12 @@ public class Prestamo {
 
     public void setMiembro(Cliente miembro) {
         this.miembro = miembro;
+    }
+    public double calcularMulta() {
+        if (LocalDate.now().isAfter(fechaDevolucion)) {
+            long diasRetraso = ChronoUnit.DAYS.between(fechaDevolucion, LocalDate.now());
+            return diasRetraso * 0.50; // Supongamos que la multa es de 0.50 por día de retraso
+        }
+        return 0;
     }
 }
