@@ -19,10 +19,14 @@ public class Main {
         listaLibros.add(libro2);
         listaLibros.add(libro3);
 
-        Biblioteca biblioteca = new Biblioteca(listaLibros);  // Crear una instancia de Biblioteca con la lista de libros
+        Prestamo prestamo1 = new Prestamo(LocalDate.now(), LocalDate.of(2024, 10, 26));
+        Bibliotecario bibliotecario1 = new Bibliotecario("Luis", 001, listaLibros, listaPrestamos, dvd);
+        Bibliotecario bibliotecario2 = new Bibliotecario("Manuel", 002, listaLibros, listaPrestamos, libro1);
+
+        Biblioteca buscarLibro = new Biblioteca(listaLibros);
 
         // Menú de opciones
-        String[] opciones = {"Buscar Libro por Autor", "Agregar Libro", "Gestionar Ítems", "Salir"};
+        String[] opciones = {"Buscar Libro por Autor", "Gestionar Ítems", "Salir"};
         int opcion;
         do {
             opcion = JOptionPane.showOptionDialog(
@@ -38,17 +42,13 @@ public class Main {
 
             switch (opcion) {
                 case 0:
-                    // Buscar libro por autor usando el método de la clase Biblioteca
+                    // Buscar libro por autor
                     String autor = JOptionPane.showInputDialog("Ingresa el nombre del autor:");
-                    biblioteca.buscarLibrosPorAutor(autor);  // Llamar al método directamente
+                    String resultado = buscarLibrosPorAutor(autor, listaLibros);
+                    JOptionPane.showMessageDialog(null, resultado);
                     break;
 
                 case 1:
-                    // Agregar un nuevo libro
-                    agregarLibro(biblioteca.getLibros());  // Pasar la lista de libros de la biblioteca
-                    break;
-
-                case 2:
                     // Gestionar ítems
                     String[] bibliotecarios = {"Luis", "Manuel"};
                     int bibliotecarioSeleccionado = JOptionPane.showOptionDialog(
@@ -62,19 +62,14 @@ public class Main {
                             bibliotecarios[0]
                     );
 
-                    String gestionResultado;
                     if (bibliotecarioSeleccionado == 0) {
-                        gestionResultado = "El bibliotecario Luis ha gestionado el ítem.";
+                        JOptionPane.showMessageDialog(null, bibliotecario1.gestionarItem());
                     } else if (bibliotecarioSeleccionado == 1) {
-                        gestionResultado = "El bibliotecario Manuel ha gestionado el ítem.";
-                    } else {
-                        gestionResultado = "No se seleccionó un bibliotecario.";
+                        JOptionPane.showMessageDialog(null, bibliotecario2.gestionarItem());
                     }
-
-                    JOptionPane.showMessageDialog(null, gestionResultado);
                     break;
 
-                case 3:
+                case 2:
                     // Salir
                     JOptionPane.showMessageDialog(null, "Saliendo del sistema...");
                     break;
@@ -82,20 +77,20 @@ public class Main {
                 default:
                     break;
             }
-        } while (opcion != 3);
+        } while (opcion != 2);
     }
 
-    // Método para agregar un libro a la lista
-    public static void agregarLibro(List<Libro> listaLibros) {
-        String titulo = JOptionPane.showInputDialog("Ingresa el título del libro:");
-        String autor = JOptionPane.showInputDialog("Ingresa el autor del libro:");
-        String isbn = JOptionPane.showInputDialog("Ingresa el ISBN del libro:");
-        boolean disponibilidad = JOptionPane.showConfirmDialog(null, "¿Está disponible el libro?", "Disponibilidad", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
-
-        Libro nuevoLibro = new Libro(autor, isbn, disponibilidad, titulo);
-        listaLibros.add(nuevoLibro);
-
-        JOptionPane.showMessageDialog(null, "Libro agregado exitosamente:\n" + nuevoLibro.toString());
+    public static String buscarLibrosPorAutor(String autor, List<Libro> listaLibros) {
+        StringBuilder resultado = new StringBuilder();
+        for (Libro libro : listaLibros) {
+            if (libro.getAutor().equalsIgnoreCase(autor)) {
+                resultado.append(libro.toString()).append("\n");
+            }
+        }
+        if (resultado.length() == 0) {
+            return "No se encontraron libros del autor: " + autor;
+        } else {
+            return "Libros encontrados:\n" + resultado.toString();
+        }
     }
 }
-

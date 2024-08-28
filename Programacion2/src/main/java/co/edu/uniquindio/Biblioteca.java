@@ -8,7 +8,7 @@ import java.util.List;
 public class Biblioteca {
 
     private List<Empleado> empleados = new ArrayList<>();
-    private List<Libro> libros= new ArrayList<>();
+    private List<Libro> libros = new ArrayList<>();
 
     public Biblioteca(List<Libro> listaLibros) {
 
@@ -39,14 +39,23 @@ public class Biblioteca {
 
     //Metodo para buscar Libros por Autor
 
-    public  List<Libro> buscarLibrosPorAutor(String autor){
-        List<Libro> librosPorAutor= new LinkedList<>();
-        for (Libro libro:libros){
-            if(libro.getAutor().equalsIgnoreCase(autor)){
+    public void buscarLibrosPorAutor(String autor){
+        List<Libro> librosPorAutor = new LinkedList<>();
+        for (Libro libro : libros) {
+            if (libro.getAutor().equalsIgnoreCase(autor)) {
                 librosPorAutor.add(libro);
             }
         }
-        return librosPorAutor;
+
+        if (librosPorAutor.isEmpty()) {
+            System.out.println("No se encontraron libros de este autor.");
+        } else {
+            for (Libro libro : librosPorAutor) {
+                System.out.println("El libro es: " + libro);
+            }
+        }
     }
 }
+
+
 
