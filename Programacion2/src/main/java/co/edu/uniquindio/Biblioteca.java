@@ -8,10 +8,7 @@ import java.util.List;
 public class Biblioteca {
 
     private List<Empleado> empleados = new ArrayList<>();
-    private List<Libro> libros= new Arraylist<>();
-    public Biblioteca(List<Empleado> empleados) {
-        this.empleados = empleados;
-    }
+    private List<Libro> libros= new ArrayList<>();
 
     public Biblioteca(List<Libro> listaLibros) {
 
