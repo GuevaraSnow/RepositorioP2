@@ -48,6 +48,9 @@ public class Libro implements GestionInventario {
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+    public void mostrarLibros(){
+        System.out.println("Los libros guardados son: ");
+    }
 
     @Override
     public void gestionarItem() {
