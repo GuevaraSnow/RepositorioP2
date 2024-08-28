@@ -47,10 +47,11 @@ public class Prestamo {
         this.miembro = miembro;
     }
     public double calcularMulta() {
-        if (LocalDate.now().isAfter(fechaDevolucion)) {
-            long diasRetraso = ChronoUnit.DAYS.between(fechaDevolucion, LocalDate.now());
-            return diasRetraso * 0.50; // Supongamos que la multa es de 0.50 por día de retraso
+        LocalDate hoy = LocalDate.now();  // Obtiene la fecha actual
+        if (hoy.isAfter(fechaDevolucion)) {  // Verifica si la fecha actual es posterior a la fecha de devolución
+            long diasRetraso = ChronoUnit.DAYS.between(fechaDevolucion, hoy);  // Calcula los días de retraso
+            return diasRetraso * 0.50;  // Calcula la multa multiplicando por el valor por día de retraso
         }
-        return 0;
+        return 0;  // Retorna 0 si no hay retraso
     }
 }

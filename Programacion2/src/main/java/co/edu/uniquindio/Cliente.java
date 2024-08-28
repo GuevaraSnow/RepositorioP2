@@ -14,6 +14,11 @@ public class Cliente {
         this.prestamosActivos = prestamosActivos;
     }
 
+    public Cliente(String nombre, String idMiembro) {
+        this.nombre = nombre;
+        this.idMiembro = idMiembro;
+    }
+
     public List<Prestamo> getPrestamosActivos() {
         return prestamosActivos;
     }

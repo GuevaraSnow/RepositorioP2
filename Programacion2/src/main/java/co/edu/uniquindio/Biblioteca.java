@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
 
+import javax.swing.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,9 +11,11 @@ public class Biblioteca {
 
     private List<Empleado> empleados = new ArrayList<>();
     private List<Libro> libros = new ArrayList<>();
+    private List<Prestamo> prestamos = new ArrayList<>();
+    private List<Cliente> listClientes = new ArrayList<>();
 
     public Biblioteca(List<Libro> listaLibros) {
-
+        this.libros = listaLibros;
     }
 
     public List<Empleado> getEmpleados() {
@@ -30,6 +34,14 @@ public class Biblioteca {
         this.libros = libros;
     }
 
+    public List<Prestamo> getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(List<Prestamo> prestamos) {
+        this.prestamos = prestamos;
+    }
+
     @Override
     public String toString() {
         return "Biblioteca{" +
@@ -37,9 +49,7 @@ public class Biblioteca {
                 '}';
     }
 
-    //Metodo para buscar Libros por Autor
-
-    public void buscarLibrosPorAutor(String autor){
+    public void buscarLibrosPorAutor(String autor) {
         List<Libro> librosPorAutor = new LinkedList<>();
         for (Libro libro : libros) {
             if (libro.getAutor().equalsIgnoreCase(autor)) {
@@ -55,7 +65,49 @@ public class Biblioteca {
             }
         }
     }
+
+    public void prestarLibro(Libro libro, Cliente cliente, LocalDate fechaDevolucion) {
+        if (libro.isDisponibilidad()) {
+            Prestamo prestamo = new Prestamo(LocalDate.now(), fechaDevolucion);
+            prestamo.setLibro(libro);
+            prestamo.setMiembro(cliente);
+            prestamos.add(prestamo);
+            libro.setDisponibilidad(false);
+            cliente.añadirPrestamo(prestamo);
+            System.out.println("Libro prestado exitosamente.");
+        } else {
+            System.out.println("El libro no está disponible.");
+        }
+    }
+
+    public void devolverLibro(Libro libro, Cliente cliente) {
+        Prestamo prestamo = null;
+        for (Prestamo p : prestamos) {
+            if (p.getLibro().equals(libro) && p.getMiembro().equals(cliente)) {
+                prestamo = p;
+                break;
+            }
+        }
+        if (prestamo != null) {
+            prestamos.remove(prestamo);
+            libro.setDisponibilidad(true);
+            cliente.eliminarPrestamo(prestamo);
+            double multa = prestamo.calcularMulta();
+            if (multa > 0) {
+                System.out.println("El libro se devolvió tarde. Multa: " + multa);
+            } else {
+                System.out.println("Libro devuelto exitosamente sin multa.");
+            }
+        } else {
+            System.out.println("No se encontró el préstamo para este libro y cliente.");
+        }
+    }
+
+    public List<Cliente> getListClientes() {
+        return listClientes;
+    }
 }
+
 
 
 
