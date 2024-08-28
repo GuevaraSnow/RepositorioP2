@@ -8,19 +8,9 @@ import java.util.List;
 public class Biblioteca {
 
     private List<Empleado> empleados = new ArrayList<>();
-    private List<Libro> libros= new LinkedList<>();
+    private List<Libro> libros= new Arraylist<>();
     public Biblioteca(List<Empleado> empleados) {
         this.empleados = empleados;
-    }
-    public List<Prestamo> ListarPrestamos = new LinkedList<>();
-    public List<Prestamo> getListarPrestamos() {
-        return ListarPrestamos;
-    }
-
-
-
-    public void setListarPrestamos(List<Prestamo> listarPrestamos) {
-        ListarPrestamos = listarPrestamos;
     }
 
     public Biblioteca() {

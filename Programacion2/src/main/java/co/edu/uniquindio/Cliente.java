@@ -7,13 +7,11 @@ public class Cliente {
     private String nombre;
     private String idMiembro;
     private List<Prestamo> prestamosActivos = new ArrayList<>();
-    private double saldoMulta = 0.0; // Nuevo atributo para manejar las multas
 
-    public Cliente(String nombre, String idMiembro,double saldoMulta) {
+    public Cliente(String nombre, String idMiembro, List<Prestamo> prestamosActivos) {
         this.idMiembro = idMiembro;
         this.nombre = nombre;
-        this.saldoMulta = saldoMulta;
-
+        this.prestamosActivos = prestamosActivos;
     }
 
     public List<Prestamo> getPrestamosActivos() {
@@ -48,20 +46,12 @@ public class Cliente {
         prestamosActivos.remove(prestamo);
     }
 
-    public double getSaldoMulta() {
-        return saldoMulta;
-    }
-
-    public void añadirMulta(double multa) {
-        saldoMulta += multa;
-    }
     @Override
     public String toString() {
         return "Cliente{" +
                 "nombre='" + nombre + '\'' +
                 ", idMiembro='" + idMiembro + '\'' +
                 ", prestamosActivos=" + prestamosActivos +
-                ", saldoMulta=" + saldoMulta +
                 '}';
     }
 }
