@@ -13,7 +13,7 @@ public class Biblioteca {
         this.empleados = empleados;
     }
 
-    public Biblioteca() {
+    public Biblioteca(List<Libro> listaLibros) {
 
     }
 
