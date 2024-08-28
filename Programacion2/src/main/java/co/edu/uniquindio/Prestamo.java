@@ -2,10 +2,12 @@ package co.edu.uniquindio.poo.torneodeportivo;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 public class Prestamo {
     private LocalDate fechaPrestamo;
     private LocalDate fechaDevolucion;
+    private  int codigoPrestamo;
     private Libro libro;
     private Cliente miembro;
 
@@ -13,6 +15,25 @@ public class Prestamo {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = fechaDevolucion;
     }
+
+    public Prestamo(int codigoPrestamo, LocalDate fechaPrestamo, LocalDate fechaDevolucion, Libro libro, Cliente miembro){
+        this.codigoPrestamo = codigoPrestamo;
+        this.fechaPrestamo = fechaPrestamo;
+        this. fechaDevolucion = fechaDevolucion;
+        this.libro = libro;
+        this.miembro = miembro;
+    }
+
+
+    public int getCodigoPrestamo() {
+        return codigoPrestamo;
+    }
+
+    public void setCodigoPrestamo(int codigoPrestamo) {
+        this.codigoPrestamo = codigoPrestamo;
+    }
+
+
 
     public LocalDate getFechaPrestamo() {
         return fechaPrestamo;
@@ -44,5 +65,9 @@ public class Prestamo {
 
     public void setMiembro(Cliente miembro) {
         this.miembro = miembro;
+    }
+
+    public long calcularDiasMora(LocalDate fechaEntregaReal) {
+        return java.time.temporal.ChronoUnit.DAYS.between(getFechaDevolucion(), fechaEntregaReal);
     }
 }
