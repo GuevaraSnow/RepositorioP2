@@ -8,8 +8,7 @@ public class Revista implements  GestionInventario{
     }
 
     @Override
-    public Object gestionarItem() {
+    public void gestionarItem() {
         System.out.println("Gestionando revista");
-        return null;
     }
 }
