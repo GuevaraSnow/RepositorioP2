@@ -50,8 +50,9 @@ public class Libro implements GestionInventario {
     }
 
     @Override
-    public void gestionarItem() {
+    public Object gestionarItem() {
         System.out.println("Gestionando libro");
+        return null;
     }
 
     @Override
