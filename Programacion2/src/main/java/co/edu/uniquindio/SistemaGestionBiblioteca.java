@@ -3,6 +3,8 @@ package co.edu.uniquindio.poo.torneodeportivo;
 import java.util.ArrayList;
 import java.util.Collection;
 
+//Clase que controla y gestiona los prestamos.
+
 public class SistemaGestionBiblioteca {
     private Bibliotecario bibliotecario;
 
@@ -37,5 +39,14 @@ public class SistemaGestionBiblioteca {
 
     public void setPrestamoBiblioteca(Collection<Prestamo> prestamoBiblioteca) {
         this.prestamoBiblioteca = prestamoBiblioteca;
+    }
+
+    @Override
+    public String toString() {
+        return "SistemaGestionBiblioteca{" +
+                "bibliotecario=" + bibliotecario +
+                ", miembrosBiblioteca=" + miembrosBiblioteca +
+                ", prestamoBiblioteca=" + prestamoBiblioteca +
+                '}';
     }
 }

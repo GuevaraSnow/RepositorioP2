@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
+//Clase abstracta de Empleado con los atriutos de empleado.
+
 public abstract class Empleado {
     private String nombre;
     private double idEmpleado;

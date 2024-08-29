@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
-public class Revista implements  GestionInventario{
+//Clase Revista, es usada como item a ser gestionado.
+
+public class Revista implements GestionInventario {
 
     @Override
     public String toString() {

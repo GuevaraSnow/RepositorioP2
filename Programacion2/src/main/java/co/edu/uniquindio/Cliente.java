@@ -3,6 +3,8 @@ package co.edu.uniquindio.poo.torneodeportivo;
 import java.util.ArrayList;
 import java.util.List;
 
+//Clase Cliente, la cual tiene los atributos del cliente el cual maneja prestamos de libros.
+
 public class Cliente {
     private String nombre;
     private String idMiembro;
@@ -59,6 +61,7 @@ public class Cliente {
                 ", prestamosActivos=" + prestamosActivos +
                 '}';
     }
+
     public double calcularMultas() {
         return prestamosActivos.stream()
                 .mapToDouble(Prestamo::calcularMulta)

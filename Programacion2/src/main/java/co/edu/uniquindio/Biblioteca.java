@@ -1,11 +1,11 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
-
-import javax.swing.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+//Clase Biblioteca, la clase principal que contiene todas las listas.
 
 public class Biblioteca {
 

@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
+//Clase Libro que contiene todos los atributos de Libro.
+
 public class Libro implements GestionInventario {
     private String titulo;
     private String autor;

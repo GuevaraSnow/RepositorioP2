@@ -1,5 +1,7 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
+//Enum para asociar el valor de las multas según el tiempo.
+
 public enum Multa {
     BAJA(0.50),
     MEDIA(1.00),

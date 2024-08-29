@@ -1,8 +1,9 @@
 package co.edu.uniquindio.poo.torneodeportivo;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+
+//Clase préstamo el cual está asociado a un libro y a un miebro.
 
 public class Prestamo {
     private LocalDate fechaPrestamo;
@@ -46,6 +47,7 @@ public class Prestamo {
     public void setMiembro(Cliente miembro) {
         this.miembro = miembro;
     }
+
     public double calcularMulta() {
         LocalDate hoy = LocalDate.now();  // Obtiene la fecha actual
         if (hoy.isAfter(fechaDevolucion)) {  // Verifica si la fecha actual es posterior a la fecha de devolución

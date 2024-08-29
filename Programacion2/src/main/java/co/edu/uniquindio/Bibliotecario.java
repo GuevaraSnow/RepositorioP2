@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+//Clase Bibliotecario, el cual hereda de empleado sus atributos. Es la encargada de gestionar tanto prestamos cómo items.
+
 public class Bibliotecario extends Empleado implements GestionInventario {
 
     private GestionInventario g;
@@ -42,6 +44,7 @@ public class Bibliotecario extends Empleado implements GestionInventario {
         System.out.println("Gestionando " + g);
         return null;
     }
+
     public void prestarLibro(Libro libro, Cliente cliente, LocalDate fechaDevolucion) {
         if (libro.isDisponibilidad()) {
             Prestamo prestamo = new Prestamo(LocalDate.now(), fechaDevolucion);
