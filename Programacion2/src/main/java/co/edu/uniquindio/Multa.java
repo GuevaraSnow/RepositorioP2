@@ -1,5 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
-
+package co.edu.uniquindio;
 //Enum para asociar el valor de las multas según el tiempo.
 
 public enum Multa {

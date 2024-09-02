@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 //Interface para gestionar items en la biblioteca.
 

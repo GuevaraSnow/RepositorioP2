@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 import javax.swing.*;
 import java.time.LocalDate;

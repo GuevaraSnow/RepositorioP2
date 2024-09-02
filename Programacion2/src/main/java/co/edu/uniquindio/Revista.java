@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 //Clase Revista, es usada como item a ser gestionado.
 

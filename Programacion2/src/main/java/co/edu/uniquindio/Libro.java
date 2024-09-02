@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 //Clase Libro que contiene todos los atributos de Libro.
 

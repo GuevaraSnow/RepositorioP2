@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

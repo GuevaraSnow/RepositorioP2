@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.torneodeportivo;
+package co.edu.uniquindio;
 
 //Clase abstracta de Empleado con los atriutos de empleado.
 
